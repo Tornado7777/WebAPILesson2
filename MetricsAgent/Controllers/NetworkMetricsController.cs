@@ -2,14 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace MetricsManager.Controllers
+namespace MetricsAgent.Controllers
 {
-    [Route("api/metrics/ram")]
+    [Route("api/metrics/network")]
     [ApiController]
-    public class RamMetricsController : ControllerBase
+    public class NetworkMetricsController : ControllerBase
     {
-        // e. api / metrics / ram / available / from /{ fromTime}/ to /{ toTime}
-        [HttpGet("available/from/{fromTime}/to/{toTime}")]
+        // c. api / metrics / network / from /{ fromTime}/ to /{ toTime}
+        [HttpGet("from/{fromTime}/to/{toTime}")]
         public IActionResult GetMetrics(
             [FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
         {
